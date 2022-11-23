@@ -21,15 +21,17 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(20.0),
           child: Form(
             child: Center(
-              child: Column(
-                children: const [
-                  SizedBox(height: 10,),
-                  Avatar(),
-                  SizedBox(height: 35,),
-                  MyText(),
-                  SizedBox(height: 55,),
-                  InputFiled()
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: const [
+                    SizedBox(height: 10,),
+                    Avatar(),
+                    SizedBox(height: 35,),
+                    MyText(),
+                    SizedBox(height: 55,),
+                    InputFiled()
+                  ],
+                ),
               ),
             ),
           ),

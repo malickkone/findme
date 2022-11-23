@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 class UsefulButton extends StatelessWidget {
 
-  final text;
+  final btnText;
 
-  const UsefulButton({super.key, required this.text});
+  const UsefulButton({super.key, required this.btnText});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class UsefulButton extends StatelessWidget {
           child:  SizedBox(
             width: 100,
             child: Text(
-              text.toString(),
+              btnText.toString(),
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 20),
             ),

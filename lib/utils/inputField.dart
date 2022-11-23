@@ -8,28 +8,47 @@ class InputFiled extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final identifiant = TextEditingController();
+    final password = TextEditingController();
     return Column(
-      children: const [
+      children:  [
         TextField(
-          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
-          decoration: InputDecoration(
+          controller: identifiant,
+          style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+          decoration: const InputDecoration(
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.blue)
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.grey)
+            ), 
             labelText: 'Identifiant',
             labelStyle:
                 TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
           ),
         ),
-        SizedBox(height: 15,),
+        const SizedBox(height: 15,),
         TextField(
-          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+          controller: password,
+          style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
           obscureText: true,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.blue)
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.grey)
+            ),
             labelText: 'Mot de passe',
             labelStyle:
                 TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
           ),
         ),
-        SizedBox(height: 100,),
-        UsefulButton(text: 'valider')
+        const SizedBox(height: 100,),
+
+        // boutton de validation
+        const UsefulButton(btnText: 'valider')
       ],
     );
   }

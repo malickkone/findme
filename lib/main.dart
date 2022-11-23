@@ -1,3 +1,4 @@
+import 'package:find_me/pages/userPage.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/homePage.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const UserPage(),
     );
   }
 }
