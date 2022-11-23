@@ -31,8 +31,13 @@ class UserPage extends StatelessWidget {
               const Text("le lien présent dans le QRcode sur la plaque", style:  TextStyle(fontWeight: FontWeight.bold)),
               const SizedBox(height: 5,),
               TextField(
+                style: const TextStyle(color: Colors.green),
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(18),
+                    borderSide: const BorderSide(color: Colors.green)
+                  ),
+                  focusedBorder:OutlineInputBorder(
                     borderRadius: BorderRadius.circular(18),
                     borderSide: const BorderSide(color: Colors.green)
                   ),
