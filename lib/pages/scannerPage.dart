@@ -1,7 +1,8 @@
+// ignore_for_file: file_names
+
 import 'package:find_me/utils/button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 
 class ScannerPage extends StatelessWidget {
   const ScannerPage({super.key});

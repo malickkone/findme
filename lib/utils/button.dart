@@ -12,7 +12,9 @@ class UsefulButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushNamed('/userPage');
+          },
           // ignore: sort_child_properties_last
           child:  SizedBox(
             width: 100,
