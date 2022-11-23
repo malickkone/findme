@@ -18,7 +18,7 @@ class InputFiled extends StatelessWidget {
           style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
           decoration: const InputDecoration(
             enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.blue)
+              borderSide: BorderSide(color: Colors.blue, width: 4)
             ),
             focusedBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: Colors.grey)
@@ -35,7 +35,7 @@ class InputFiled extends StatelessWidget {
           obscureText: true,
           decoration: const InputDecoration(
             enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.blue)
+              borderSide: BorderSide(color: Colors.blue, width: 4)
             ),
             focusedBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: Colors.grey)

@@ -13,16 +13,8 @@ class Box extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
                 // ignore: sort_child_properties_last
-                child: Padding(
-                  padding:  const EdgeInsets.symmetric(horizontal: 20 , vertical: 10),
-                  child: Column(
-                    children: [
-                      Image.asset(icon),
-                      Text(text1, style: const TextStyle(fontWeight: FontWeight.bold),),
-                      Text(text2, style: const TextStyle(fontWeight: FontWeight.bold))
-                    ],
-                  ),
-                ),
+                width: 110,
+                height: 125,
                 decoration: BoxDecoration(
                   color: Colors.white70,
                   borderRadius: BorderRadius.circular(15),
@@ -37,6 +29,16 @@ class Box extends StatelessWidget {
                     )
 
                   ]
+                ),
+                child: Padding(
+                  padding:  const EdgeInsets.symmetric(horizontal: 20 , vertical: 10),
+                  child: Column(
+                    children: [
+                      Image.asset(icon,),
+                      Text(text1, style: const TextStyle(fontWeight: FontWeight.bold),),
+                      Text(text2, style: const TextStyle(fontWeight: FontWeight.bold))
+                    ],
+                  ),
                 ),
               );
   }
