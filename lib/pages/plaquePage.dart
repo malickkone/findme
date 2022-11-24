@@ -81,7 +81,7 @@ class PlaquePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 25,),
-              const UsefulButton(btnText: 'Valider'),
+              UsefulButton(btnText: 'Valider', function: (){},),
               const Spacer(),
               Image.asset('assets/slogan.png')
               

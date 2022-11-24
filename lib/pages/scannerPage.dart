@@ -52,7 +52,7 @@ class ScannerPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40,),
-              const UsefulButton(btnText: 'Retour')
+              UsefulButton(btnText: 'Retour', function:(){Navigator.of(context).pushNamed('/userPage');} ,)
             ],
           ),
         ),

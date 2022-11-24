@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, prefer_is_empty
 import 'package:sqflite/sqflite.dart';
 // ignore: depend_on_referenced_packages
 import 'package:path/path.dart';
@@ -48,5 +48,20 @@ class SqlDb {
     Database? mydb = await db;
     List<Map> response = await mydb!.rawQuery(sql);
     return response;
+  }
+
+  Future<bool> loginUser(String login, String pwd) async {
+    bool val;
+    Database? mydb = await db;
+    List<Map> res = await mydb!.rawQuery("SELECT * FROM 'users' WHERE login ='$login' AND pwd ='$pwd'");
+    
+
+     if(res.length > 0){
+       val = true;
+     }else{
+       val = false;
+     }
+    
+     return val;
   }
 }

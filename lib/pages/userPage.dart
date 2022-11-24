@@ -9,11 +9,16 @@ class UserPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
+    var link = TextEditingController();
+    function1(){
+      return Navigator.of(context).pushNamed('/plaque');
+    }
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(10),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -26,13 +31,14 @@ class UserPage extends StatelessWidget {
               const SizedBox(height: 30,),
               Image.asset('assets/profil.png'),
               const SizedBox(height: 30,),
-              const Box(icon: 'assets/searchQR.png', text1: 'Scanner',text2: 'QR code',),
+              Box(icon: 'assets/searchQR.png', text1: 'Scanner',text2: 'QR code', ontap: (){Navigator.of(context).pushNamed('/qr');},),
               const SizedBox(height: 15,),
               const Text("Entrez l'identifiant à l'aide de l'adresse en copian", style: TextStyle(fontWeight: FontWeight.bold)),
               const Text("le lien présent dans le QRcode sur la plaque", style:  TextStyle(fontWeight: FontWeight.bold)),
               const SizedBox(height: 5,),
               TextField(
                 style: const TextStyle(color: Colors.green),
+                controller: link,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(18),
@@ -45,9 +51,9 @@ class UserPage extends StatelessWidget {
                   hintText: '     Exemple: info.house/sen/aid/adresse',
                 ),
               ),
-              const Spacer(),
-              const UsefulButton(btnText: 'valider'),
-              const Spacer(),
+              const SizedBox(height: 20,),
+              UsefulButton(btnText: 'valider' , function: function1 ),
+              const SizedBox(height: 48,),
               Image.asset('assets/slogan.png')
             ],
           ),
