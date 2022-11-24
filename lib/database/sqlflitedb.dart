@@ -20,7 +20,7 @@ class SqlDb {
   initialDb() async {
     String databasepath = await getDatabasesPath();
     String path = join(databasepath, 'findmedb');
-    Database mydb = await openDatabase(path, onCreate: _onCreate);
+    Database mydb = await openDatabase(path, version: 1, onCreate: _onCreate);
     return mydb;
   }
 

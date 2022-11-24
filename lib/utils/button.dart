@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
+import 'package:find_me/database/sqlflitedb.dart';
 import 'package:flutter/material.dart';
 
 
@@ -11,9 +12,13 @@ class UsefulButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SqlDb sql = SqlDb();
     return  ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).pushNamed('/userPage');
+          onPressed: () async{
+             await sql.insertData("INSERT INTO 'users' ('login','pwd') values ('papa','papa1805')");
+             List<Map> response = await sql.readData("select * from 'users'");
+             print("$response");
+            // Navigator.of(context).pushNamed('/userPage');
           },
           // ignore: sort_child_properties_last
           child:  SizedBox(
