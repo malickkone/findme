@@ -2,6 +2,7 @@
 
 import 'package:find_me/utils/button.dart';
 import 'package:flutter/material.dart';
+import 'package:clipboard/clipboard.dart';
 
 
 class ScannerPage extends StatelessWidget {
@@ -26,11 +27,15 @@ class ScannerPage extends StatelessWidget {
                 child: Padding(
                   padding:  const EdgeInsets.symmetric(horizontal: 50 , vertical: 60),
                   child: Column(
-                    children: const [
+                    children:  [
                       
-                      Text('https//info.house/sen/aid/adresse', style:TextStyle(color: Colors.green, fontSize:15 ),),
-                      SizedBox(height: 10,),
-                      Icon(Icons.copy, color: Colors.green,)
+                      const Text('https//info.house/sen/aid/adresse', style:TextStyle(color: Colors.green, fontSize:15 ),),
+                      const SizedBox(height: 10,),
+                      GestureDetector(
+                        onTap: (){
+                          FlutterClipboard.copy('https//info.house/sen/aid/adresse').then((value) => print('copierrrrrrrr'));
+                        },
+                        child: const Icon(Icons.copy, color: Colors.green,))
                      
                     ],
                   ),

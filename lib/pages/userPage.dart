@@ -1,12 +1,18 @@
 // ignore_for_file: file_names
 
+import 'package:clipboard/clipboard.dart';
 import 'package:find_me/utils/box.dart';
 import 'package:find_me/utils/button.dart';
 import 'package:flutter/material.dart';
 
-class UserPage extends StatelessWidget {
+class UserPage extends StatefulWidget {
   const UserPage({super.key});
 
+  @override
+  State<UserPage> createState() => _UserPageState();
+}
+
+class _UserPageState extends State<UserPage> {
   @override
   Widget build(BuildContext context) {
     var link = TextEditingController();
@@ -39,6 +45,14 @@ class UserPage extends StatelessWidget {
               TextField(
                 style: const TextStyle(color: Colors.green),
                 controller: link,
+                onTap: () {
+                  FlutterClipboard.paste().then((value) => {
+                    setState(() {
+                      link.text = value;
+                      print(link.text);
+                     })
+                  });
+                },
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(18),
