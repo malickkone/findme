@@ -1,4 +1,5 @@
 // ignore_for_file: file_names, avoid_print
+import 'package:find_me/database/sqlflitedb.dart';
 import 'package:find_me/utils/avatar.dart';
 import 'package:find_me/utils/inputField.dart';
 import 'package:find_me/utils/text.dart';
@@ -16,6 +17,16 @@ class HomePage extends StatefulWidget {
 
 
 class _HomePageState extends State<HomePage> {
+
+  SqlDb sql = SqlDb();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    sql.insertData("INSERT INTO 'users'('login','pwd') VALUES ('diouf','diouf123')");
+    
+  }
 
   @override
   Widget build(BuildContext context) {
