@@ -49,7 +49,6 @@ class _UserPageState extends State<UserPage> {
                   FlutterClipboard.paste().then((value) => {
                     setState(() {
                       link.text = value;
-                      print(link.text);
                      })
                   });
                 },
